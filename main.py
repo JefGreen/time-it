@@ -1,5 +1,5 @@
 import time
-import logging
+
 
 class bcolors:
     HEADER = '\033[95m'
@@ -16,9 +16,9 @@ def log_duration(func):
     def inner(*args, **kwargs):
         start_time = time.time()
         result = func(*args, **kwargs)
-        duration = "{:.6f}".format((time.time() - start_time) * 1e6 / 1e6)
+        duration = "{:.2f}".format((time.time() - start_time))
         formated_kwargs = ', '.join([f'{key}: {bcolors.OKBLUE}{value}{bcolors.ENDC}' for key, value in kwargs.items()])
 
-        logging.debug(f'{duration}s for {bcolors.BOLD}{func.__name__}{bcolors.ENDC} {formated_kwargs})')
+        print(f'{duration}s for {bcolors.BOLD}{func.__name__}{bcolors.ENDC} {formated_kwargs}')
         return result
     return inner
