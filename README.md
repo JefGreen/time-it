@@ -1,5 +1,5 @@
 # time-it
-Short snippet to log a function's duration and arguments
+Short snippet to log a function's duration and keyword arguments
 
 
 ## Usage exemple
